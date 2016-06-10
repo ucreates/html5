@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <meta name="viewport" content="width=320, user-scalable=no" />
+        <title>Demo Anime By Html5!</title>
+
+        <!-- NameSpace-->
+        <script type="text/javascript" src="./js/canvas/NameSpace.js"></script>
+        <script type="text/javascript" src="./js/NameSpace.js"></script>
+
+        <!-- Lib Components-->
+        <script type="text/javascript" src="./js/canvas/web/Url.js"></script>
+        <script type="text/javascript" src="./js/canvas/web/parameter/Get.js"></script>
+        <script type="text/javascript" src="./js/canvas/web/parameter/Post.js"></script>
+        <script type="text/javascript" src="./js/canvas/web/control/Form.js"></script>
+        <script type="text/javascript" src="./js/canvas/object/Destroy.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/Main.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/scene/Core.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/scene/Manager.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/layer/Manager.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/timeline/Manager.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/frame/Wait.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/validator/Range.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/trace/Log.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/utility/Array.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/state/FiniteState.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/state/FiniteStateEntity.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/state/FiniteStateMachine.js"></script>
+        <script type="text/javascript" src="./js/canvas/system/notify/NotifyManager.js"></script>
+        <script type="text/javascript" src="./js/canvas/phisix/Parabora.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/Frame.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/Easing.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/Vector.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/Bouncy.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Sin.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Cos.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Circle.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Eight.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Ferguson.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Basis.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/sprine/Bezier.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/spiral/Parabora.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/fade/In.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/fade/Out.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/fade/OutIn.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/scale/Core.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/scale/Bouncy.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/scale/Decline.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/scale/Increase.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/scale/Loop.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/shake/Decline.js"></script>
+        <script type="text/javascript" src="./js/canvas/vfx/shake/Increase.js"></script>
+        <script type="text/javascript" src="./js/canvas/entity/Manager.js"></script>
+        <script type="text/javascript" src="./js/canvas/entity/Position.js"></script>
+        <script type="text/javascript" src="./js/canvas/entity/Circle.js"></script>
+        <script type="text/javascript" src="./js/canvas/entity/Size.js"></script>
+        <script type="text/javascript" src="./js/canvas/entity/User.js"></script>
+        <script type="text/javascript" src="./js/canvas/entity/Redirect.js"></script>
+        <script type="text/javascript" src="./js/canvas/sprite/Static.js"></script>
+        <script type="text/javascript" src="./js/canvas/sprite/Dynamic.js"></script>
+        <script type="text/javascript" src="./js/canvas/screen/Canvas.js"></script>
+        <script type="text/javascript" src="./js/canvas/phisix/Collider.js"></script>
+        <script type="text/javascript" src="./js/canvas/phisix/bound/Scale.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Vector.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Sort.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Radian.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Degree.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Matrix.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Random.js"></script>
+        <script type="text/javascript" src="./js/canvas/math/Figure.js"></script>
+        <script type="text/javascript" src="./js/canvas/ui/button/Core.js"></script>
+        <script type="text/javascript" src="./js/canvas/ui/button/Observer.js"></script>
+        <script type="text/javascript" src="./js/canvas/ui/button/Static.js"></script>
+        <script type="text/javascript" src="./js/canvas/ui/button/Dynamic.js"></script>
+
+        <!-- Scene -->
+        <script type="text/javascript" src="./js/scene/Scene1.js"></script>
+
+        <!-- Presentation Layer -->
+        <script type="text/javascript" src="./js/component/Core.js"></script>
+        <script type="text/javascript" src="./js/component/ui/BackGround.js"></script>
+        <script type="text/javascript" src="./js/component/card/Player.js"></script>
+        <script type="text/javascript" src="./js/component/card/Boss.js"></script>
+        <script type="text/javascript" src="./js/component/effect/Recover.js"></script>
+        <script type="text/javascript" src="./js/component/effect/PowerUp.js"></script>
+        <script type="text/javascript" src="./js/component/effect/Ray.js"></script>
+        <script type="text/javascript" src="./js/component/effect/BlackHole.js"></script>
+        <script type="text/javascript" src="./js/component/effect/Sword.js"></script>
+        <script type="text/javascript" src="./js/component/effect/Number.js"></script>
+        <script type="text/javascript" src="./js/component/mark/Versus.js"></script>
+        <script type="text/javascript" src="./js/component/mark/Particle.js"></script>
+        <script type="text/javascript" src="./js/component/mark/Line.js"></script>
+        <script type="text/javascript" src="./js/component/TestObject.js"></script>
+
+        <!-- Presentation FiniteState -->
+        <script type="text/javascript" src="./js/component/state/player/AttackState.js"></script>
+        <script type="text/javascript" src="./js/component/state/player/DamageState.js"></script>
+        <script type="text/javascript" src="./js/component/state/player/DeathState.js"></script>
+        <script type="text/javascript" src="./js/component/state/player/PowerUpState.js"></script>
+        <script type="text/javascript" src="./js/component/state/player/RecoverState.js"></script>
+        <script type="text/javascript" src="./js/component/state/boss/AttackState.js"></script>
+        <script type="text/javascript" src="./js/component/state/boss/DamageState.js"></script>
+        <script type="text/javascript" src="./js/component/state/boss/DeathState.js"></script>
+        <script type="text/javascript" src="./js/component/state/boss/BlackHoleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/blackhole/CircleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/blackhole/CloseState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/blackhole/FlashState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/blackhole/OpenState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/powerup/CircleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/powerup/ConvergenceState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/powerup/RestoreState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/recover/NormalState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/recover/ReverseState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/sword/AttackState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/sword/RestoreState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/ray/FirstScaleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/ray/SecondScaleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/ray/RestoreState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/number/ParaboraState.js"></script>
+        <script type="text/javascript" src="./js/component/state/effect/number/RestoreState.js"></script>
+        <script type="text/javascript" src="./js/component/state/mark/line/ScaleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/mark/line/DeclineState.js"></script>
+        <script type="text/javascript" src="./js/component/state/mark/particle/CircleState.js"></script>
+        <script type="text/javascript" src="./js/component/state/mark/versus/ShowState.js"></script>
+        <script type="text/javascript" src="./js/component/state/mark/versus/HideState.js"></script>
+
+        <!-- Service Layer -->
+        <script type="text/javascript" src="./js/service/ServiceGateway.js"></script>
+        <script type="text/javascript" src="./js/service/BaseService.js"></script>
+        <script type="text/javascript" src="./js/service/BossService.js"></script>
+        <script type="text/javascript" src="./js/service/strategy/Boss/BossAttackStateStrategy.js"></script>
+        <script type="text/javascript" src="./js/service/bizlogic/BaseBizLogic.js"></script>
+        <script type="text/javascript" src="./js/service/bizlogic/BossBizLogic.js"></script>
+        <script type="text/javascript" src="./js/service/integration/Dao.js"></script>
+        <script type="text/javascript" src="./js/service/integration/DataBase.js"></script>
+        <script type="text/javascript" src="./js/service/integration/schema/Key.js"></script>
+        <script type="text/javascript" src="./js/service/integration/table/BaseTable.js"></script>
+        <script type="text/javascript" src="./js/service/integration/table/TBossAttackDataTable.js"></script>
+    </head>
+    <body style="margin:0px 0px 0px 0px;">
+    <script type="text/javascript">
+    <!--
+        var onWindowLoaded = function() {
+            try {
+                var tasklist= new Array();
+                var task1 = new Direction.Battle.Scene.Scene1(null);
+                tasklist.push(task1);
+                var system = new Html5.System.Main(tasklist);
+                system.run();
+            } catch(e) {
+                console.log("occuredException::"+e);
+            }
+        };
+        window.addEventListener('load', onWindowLoaded);
+    //-->
+    </script>
+    <div>
+        <canvas id="canvas" width="320" height="430">
+            canvas Not supported
+        </canvas>
+    </div>
+    </body>
+</html>
