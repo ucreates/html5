@@ -9,27 +9,21 @@
 //======================================================================
 Direction.Battle.Service.Integration.DataBase = function() {
     this.serviceList = new Array();
-
-    this.registDao = function () {
+    this.registDao = function() {
         this.serviceList["TBossAttackDataTable"] = new Direction.Battle.Service.Integration.Dao();
     }
-
-    this.findServiceByName = function (daoName) {
+    this.findServiceByName = function(daoName) {
         if (null !== this.serviceList[daoName]) {
             return this.serviceList[daoName];
         }
         return null;
     };
-
     this.clear = function() {
         delete this.serviceList;
         this.serviceList = new Array();
     };
-
 };
-
 Direction.Battle.Service.Integration.DataBase.instance = null;
-
 Direction.Battle.Service.Integration.DataBase.getInstance = function() {
     if (null === Direction.Battle.Service.Integration.DataBase.instance) {
         Direction.Battle.Service.Integration.DataBase.instance = new Direction.Battle.Service.Integration.DataBase();
@@ -37,4 +31,3 @@ Direction.Battle.Service.Integration.DataBase.getInstance = function() {
     }
     return Direction.Battle.Service.Integration.DataBase.instance;
 };
-

@@ -8,10 +8,8 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.VFX.Frame = function() {};
-
-Html5.VFX.Frame.create = function(currentFrame,totalFrame)
-{
- if (currentFrame>totalFrame)
-     currentFrame = totalFrame;
- return (currentFrame/totalFrame);
+Html5.VFX.Frame.create = function(currentFrame, totalFrame) {
+    if (currentFrame > totalFrame)
+        currentFrame = totalFrame;
+    return (currentFrame / totalFrame);
 };

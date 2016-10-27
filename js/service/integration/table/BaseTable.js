@@ -11,6 +11,5 @@ Direction.Battle.Service.Integration.Table.BaseTable = function() {
     this.recordList = new Array();
     this.primaryKey = new Direction.Battle.Service.Integration.Schema.Key();
     this.foreignKey = new Direction.Battle.Service.Integration.Schema.Key();
-
     this.id = -1;
 };

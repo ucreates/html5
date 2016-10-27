@@ -9,25 +9,19 @@
 //======================================================================
 Direction.Battle.Service.Integration.Dao = function() {
     this.recordList = new Array();
-
     this.findById = function(mutipleKeyList) {
         if (0 === this.count()) {
             return null;
         }
-
         var primaryKey = Direction.Battle.Service.Integration.Schema.Key.generate(mutipleKeyList);
         if (null !== this.recordList[primaryKey]) {
             return this.recordList[primaryKey];
         }
         return null;
     };
-
-    this.findByCreteria = function (criteria) {
-
+    this.findByCreteria = function(criteria) {
     };
-
-    this.save = function(record)
-    {
+    this.save = function(record) {
         record.id = this.count() + 1;
         var primaryKey = record.getPrimaryKey();
         if (null === this.recordList[primaryKey] || undefined === this.recordList[primaryKey]) {
@@ -36,7 +30,6 @@ Direction.Battle.Service.Integration.Dao = function() {
         }
         return false;
     };
-
     this.update = function(record) {
         //string primaryKey = record.GetPrimaryKey();
         var primaryKey = "key";
@@ -46,7 +39,6 @@ Direction.Battle.Service.Integration.Dao = function() {
         }
         return false;
     };
-
     this.delete = function(record) {
         var primaryKey = "key";
         if (null !== this.recordList[primaryKey] || undefined !== this.recordList[primaryKey]) {
@@ -56,21 +48,17 @@ Direction.Battle.Service.Integration.Dao = function() {
         }
         return false;
     };
-
     this.clear = function() {
         delete this.recordList;
         this.recordList = new Array();
     };
-
     this.isEmpty = function() {
         if (0 === Object.keys(this.recordList).length) {
             return true;
         }
         return false;
     };
-
     this.count = function() {
         return Object.keys(this.recordList).length;
     };
-
 };

@@ -12,21 +12,18 @@ Direction.Battle.Component.State.Boss.DeathState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         return;
     };
-
-    this.execute = function () {
-        var x = Html5.VFX.Easing.quadraticOut(25,this.timeLine.currentFrame,5);
+    this.execute = function() {
+        var x = Html5.VFX.Easing.quadraticOut(25, this.timeLine.currentFrame, 5);
         this.owner.uposition.transformAdd(x, 0);
         this.owner.dposition.transformAdd(-x, 0);
-
         //alpha
-        this.owner.alpha = Html5.VFX.Fade.Out.linerIn(this.timeLine.currentFrame,5);
-
-        if(this.owner.alpha !== 0) {
+        this.owner.alpha = Html5.VFX.Fade.Out.linerIn(this.timeLine.currentFrame, 5);
+        if (this.owner.alpha !== 0) {
             this.timeLine.goToNextFrame();
         }
         return;

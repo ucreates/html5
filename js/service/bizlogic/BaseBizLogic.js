@@ -7,5 +7,4 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Direction.Battle.Service.BizLogic.BaseBizLogic = function() {
-};
+Direction.Battle.Service.BizLogic.BaseBizLogic = function() {};

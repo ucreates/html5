@@ -13,17 +13,16 @@ Direction.Battle.Component.State.Effect.BlackHole.FlashState = function(owner) {
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
     var lastFrame = 43;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         this.alpha = 1;
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         this.owner.alpha = 1;
         var cf = this.timeLine.currentFrame;
-        this.owner.flushRadius = Html5.VFX.Sin.curveZeroToPlus(0.075,cf)*600;
+        this.owner.flushRadius = Html5.VFX.Sin.curveZeroToPlus(0.075, cf) * 600;
         if (this.timeLine.currentFrame !== lastFrame) {
             this.timeLine.goToNextFrame();
         } else {

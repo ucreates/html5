@@ -8,10 +8,7 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.Mathmatics.Degree = function() {};
-
-Html5.Mathmatics.Degree.createFromRadian = function(radian)
-{
- var ret = radian * 180 / Math.PI;
- return ret;
+Html5.Mathmatics.Degree.createFromRadian = function(radian) {
+    var ret = radian * 180 / Math.PI;
+    return ret;
 };
-

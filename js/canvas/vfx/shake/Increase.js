@@ -8,19 +8,14 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.VFX.Shake.Increase = function() {};
-
-Html5.VFX.Shake.Increase.ExponentialOut = function(friction,currentFrame,totalFrame)
-{
- var shake = Html5.VFX.Easing.linerIn(friction,currentFrame,totalFrame);
- if (0 == currentFrame%2)
- {
-  shake *= -1;
- }
- return shake;
+Html5.VFX.Shake.Increase.ExponentialOut = function(friction, currentFrame, totalFrame) {
+    var shake = Html5.VFX.Easing.linerIn(friction, currentFrame, totalFrame);
+    if (0 == currentFrame % 2) {
+        shake *= -1;
+    }
+    return shake;
 };
-
-Html5.VFX.Shake.Increase.Loop = function(friction,currentFrame)
-{
- var shake = Html5.VFX.Sin.curveZeroToPlus(0.1,currentFrame)*friction;
- return 0 === currentFrame%2 ? shake : shake *= -1;
+Html5.VFX.Shake.Increase.Loop = function(friction, currentFrame) {
+    var shake = Html5.VFX.Sin.curveZeroToPlus(0.1, currentFrame) * friction;
+    return 0 === currentFrame % 2 ? shake : shake *= -1;
 };

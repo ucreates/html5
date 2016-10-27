@@ -7,12 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Html5.Audio.Validator.Wav = function()
-{
- Html5.Audio.Validator.Core.call(this);
- this.isValid = function()
- {
-  return this.isCoreValid("audio/wav");
- };
+Html5.Audio.Validator.Wav = function() {
+    Html5.Audio.Validator.Core.call(this);
+    this.isValid = function() {
+        return this.isCoreValid("audio/wav");
+    };
 };
-

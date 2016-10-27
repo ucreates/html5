@@ -9,18 +9,16 @@
 //======================================================================
 Html5.Phisix.Parabora = function() {};
 Html5.Phisix.Parabora.Gravity = 0.98;
-
-Html5.Phisix.Parabora.create = function(v,m,degree,currentFrame)
-{
- var radian = Html5.Mathmatics.Radian.createFromDegree(degree);
- this.Sin = Math.sin(radian);
- this.Cos = Math.cos(radian);
- this.V = v;
- this.M = m;
- var pos = new Html5.Entity.Position();
- var xpos = this.V*this.Cos*currentFrame;
- var ypos = ((this.V*this.Sin*currentFrame)-(Html5.Phisix.Parabora.Gravity*currentFrame*currentFrame/2))*-1;
- pos.x = xpos;
- pos.y = ypos;
- return pos;
+Html5.Phisix.Parabora.create = function(v, m, degree, currentFrame) {
+    var radian = Html5.Mathmatics.Radian.createFromDegree(degree);
+    this.Sin = Math.sin(radian);
+    this.Cos = Math.cos(radian);
+    this.V = v;
+    this.M = m;
+    var pos = new Html5.Entity.Position();
+    var xpos = this.V * this.Cos * currentFrame;
+    var ypos = ((this.V * this.Sin * currentFrame) - (Html5.Phisix.Parabora.Gravity * currentFrame * currentFrame / 2)) * -1;
+    pos.x = xpos;
+    pos.y = ypos;
+    return pos;
 };

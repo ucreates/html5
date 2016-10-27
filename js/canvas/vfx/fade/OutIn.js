@@ -8,8 +8,6 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.VFX.Fade.OutIn = function() {};
-
-Html5.VFX.Fade.OutIn.create = function(friction,currentFrame)
-{
-  return Html5.VFX.Sin.curveZeroToPlus(friction,currentFrame);
+Html5.VFX.Fade.OutIn.create = function(friction, currentFrame) {
+    return Html5.VFX.Sin.curveZeroToPlus(friction, currentFrame);
 };

@@ -12,16 +12,15 @@ Direction.Battle.Component.State.Mark.Line.DeclineState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         this.timeLine.setAddRate(1);
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         var frame = this.timeLine.currentFrame;
-        var rate = Html5.VFX.Scale.Decline.linerOut(9,frame,5);
+        var rate = Html5.VFX.Scale.Decline.linerOut(9, frame, 5);
         this.owner.size.transformMultiple(rate, rate);
         this.owner.position.transformDefault(this.owner.size.paddingx, this.owner.size.paddingy);
         this.timeLine.goToNextFrame();

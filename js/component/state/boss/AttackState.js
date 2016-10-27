@@ -14,48 +14,43 @@ Direction.Battle.Component.State.Boss.AttackState = function(owner) {
     this.isComplete = false;
     var lastframe = 5;
     var _enemyId = 0;
-
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
-
-        var enemyIndex = Html5.Mathmatics.Random.range(0,this.owner.nextEnemy.length - 1);
+        var enemyIndex = Html5.Mathmatics.Random.range(0, this.owner.nextEnemy.length - 1);
         var degree = 0;
-        if(enemyIndex == 0) {
+        if (enemyIndex == 0) {
             degree = 240;
-        } else if(enemyIndex == 1) {
+        } else if (enemyIndex == 1) {
             degree = 270;
-        } else if(enemyIndex == 2) {
+        } else if (enemyIndex == 2) {
             degree = 310;
-        } else if(enemyIndex == 3) {
+        } else if (enemyIndex == 3) {
             degree = 330;
-        } else if(enemyIndex == 4) {
+        } else if (enemyIndex == 4) {
             degree = 210;
         }
         this.owner.vector.createFromDegree(degree);
         _enemyId = enemyIndex + 1;
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         if (false !== this.isComplete) {
             return;
         }
         //position
-        var x = Html5.VFX.Bouncy.linerOut(60,this.timeLine.currentFrame,lastframe,this.owner.vector.cos);
-        var y = Html5.VFX.Bouncy.linerOut(60,this.timeLine.currentFrame,lastframe,this.owner.vector.sin);
-        this.owner.position.transformAdd(x,y);
-
-        if(this.timeLine.equal(lastframe - 3)) {
-            var val = Html5.Mathmatics.Random.range(0,4);
-            if(2 >= val) {
-                Html5.System.Notify.NotifyManager.getInstance().notify("playerDamage",_enemyId);
+        var x = Html5.VFX.Bouncy.linerOut(60, this.timeLine.currentFrame, lastframe, this.owner.vector.cos);
+        var y = Html5.VFX.Bouncy.linerOut(60, this.timeLine.currentFrame, lastframe, this.owner.vector.sin);
+        this.owner.position.transformAdd(x, y);
+        if (this.timeLine.equal(lastframe - 3)) {
+            var val = Html5.Mathmatics.Random.range(0, 4);
+            if (2 >= val) {
+                Html5.System.Notify.NotifyManager.getInstance().notify("playerDamage", _enemyId);
             } else {
-                Html5.System.Notify.NotifyManager.getInstance().notify("playerDamage",_enemyId);
+                Html5.System.Notify.NotifyManager.getInstance().notify("playerDamage", _enemyId);
             }
         }
-
-        if(this.timeLine.equal(lastframe)) {
+        if (this.timeLine.equal(lastframe)) {
             this.owner.stateMachine.stop();
             this.owner.restore();
             var service = Direction.Battle.Service.ServiceGateway.getInstance();
@@ -64,7 +59,7 @@ Direction.Battle.Component.State.Boss.AttackState = function(owner) {
                 if (false !== ret["is_next_attack"]) {
                     Html5.System.Notify.NotifyManager.getInstance().notify("nextEnemyAction");
                 } else {
-                    Html5.System.Notify.NotifyManager.getInstance().notify("nextPlayerAction",1);
+                    Html5.System.Notify.NotifyManager.getInstance().notify("nextPlayerAction", 1);
                 }
             }
         } else {

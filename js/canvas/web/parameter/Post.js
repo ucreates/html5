@@ -7,19 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Html5.Web.Parameter.Post = function()
-{
- this.value = new Array();
- 
- this.add = function(key,value) 
- {
-  this.value[key] = value;
- };
- 
- this.dump = function()
- {
-  for (var key in this.value)
-  {
-  }
- };
+Html5.Web.Parameter.Post = function() {
+    this.value = new Array();
+    this.add = function(key, value) {
+        this.value[key] = value;
+    };
+    this.dump = function() {
+        for (var key in this.value) {}
+    };
 };

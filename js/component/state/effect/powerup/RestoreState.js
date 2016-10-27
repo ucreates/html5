@@ -12,22 +12,19 @@ Direction.Battle.Component.State.Effect.PowerUp.RestoreState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = true;
         for (var stateMachine in this.owner.stateMachineList) {
             this.owner.stateMachineList[stateMachine].stop();
         }
-
         this.owner.timeLine.reset();
         this.owner.timeLine.setAddRate(0.3);
         this.owner.timeLine.gotoStart();
-        for(var pos in this.owner.positions) {
+        for (var pos in this.owner.positions) {
             var obj = this.owner.positions[pos];
             obj.restore();
         }
-
-        for(var size in this.owner.sizes) {
+        for (var size in this.owner.sizes) {
             var obj = this.owner.sizes[size];
             obj.restore();
         }

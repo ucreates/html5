@@ -10,7 +10,6 @@
 var Direction = {};
 Direction.Battle = {};
 Direction.Battle.Scene = {};
-
 Direction.Battle.Component = {};
 Direction.Battle.Component.UI = {};
 Direction.Battle.Component.Card = {};
@@ -38,7 +37,6 @@ Direction.Battle.Component.State.Mark = {};
 Direction.Battle.Component.State.Mark.Line = {};
 Direction.Battle.Component.State.Mark.Particle = {};
 Direction.Battle.Component.State.Mark.Versus = {};
-
 Direction.Battle.Service = {};
 Direction.Battle.Service.BizLogic = {};
 Direction.Battle.Service.Strategy = {};

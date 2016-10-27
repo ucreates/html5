@@ -7,18 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Html5.System.State.FiniteStateMachine = function()
-{
+Html5.System.State.FiniteStateMachine = function() {
     this.stateList = new Array();
     this.finiteStateEntity = new Html5.System.State.FiniteStateEntity();
     this.notifyParameter = null;
-
-    this.change = function(newStateName,notifyParamter) {
+    this.change = function(newStateName, notifyParamter) {
         this.notifyParamter = notifyParamter;
         var nextState = this.get(newStateName);
-        this.finiteStateEntity.update(newStateName,nextState);
+        this.finiteStateEntity.update(newStateName, nextState);
     };
-
     this.update = function() {
         if (false !== this.finiteStateEntity.isNewState) {
             this.finiteStateEntity.state.create(this.notifyParamter);
@@ -30,21 +27,17 @@ Html5.System.State.FiniteStateMachine = function()
             }
         }
     };
-
     this.get = function(stateName) {
         return this.stateList[stateName];
     };
-
-    this.add = function(stateName,state) {
+    this.add = function(stateName, state) {
         this.stateList[stateName] = state;
     };
-
     this.play = function() {
         for (var state in this.stateList) {
             this.stateList[state].isComplete = false;
         }
     };
-
     this.stop = function() {
         for (var state in this.stateList) {
             this.stateList[state].isComplete = true;

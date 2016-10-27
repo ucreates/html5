@@ -7,12 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Html5.Audio.Validator.Mp3 = function()
-{
- Html5.Audio.Validator.Core.call(this);
- this.isValid = function()
- {
-  return this.isCoreValid("audio/mpeg");
- };
+Html5.Audio.Validator.Mp3 = function() {
+    Html5.Audio.Validator.Core.call(this);
+    this.isValid = function() {
+        return this.isCoreValid("audio/mpeg");
+    };
 };
-

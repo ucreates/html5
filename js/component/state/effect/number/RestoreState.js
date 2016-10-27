@@ -12,16 +12,14 @@ Direction.Battle.Component.State.Effect.Number.RestoreState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.owner.restoreZeroAlphaAndStop();
         this.owner.timeLine.reset();
         this.owner.timeLine.start = false;
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         return;
     };
 };

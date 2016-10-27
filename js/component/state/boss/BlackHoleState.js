@@ -13,19 +13,16 @@ Direction.Battle.Component.State.Boss.BlackHoleState = function(owner) {
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
     this.isNotifyPlayer = false;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         return;
     };
-
-    this.execute = function () {
-
-        if(this.timeLine.isRange(0,1)) {
+    this.execute = function() {
+        if (this.timeLine.isRange(0, 1)) {
             this.owner.magic[0].timeLine.start = true;
         }
-
-        if(!this.owner.magic[0].timeLine.start) {
+        if (!this.owner.magic[0].timeLine.start) {
             if (!this.isNotifyPlayer) {
                 this.isNotifyPlayer = true;
             }
@@ -40,7 +37,7 @@ Direction.Battle.Component.State.Boss.BlackHoleState = function(owner) {
                         Html5.System.Notify.NotifyManager.getInstance().notify("nextEnemyAction");
                     } else {
                         Html5.System.Notify.NotifyManager.getInstance().notify("allPlayerDamage");
-                        Html5.System.Notify.NotifyManager.getInstance().notify("nextPlayerAction",1);
+                        Html5.System.Notify.NotifyManager.getInstance().notify("nextPlayerAction", 1);
                     }
                 }
             }
@@ -49,17 +46,15 @@ Direction.Battle.Component.State.Boss.BlackHoleState = function(owner) {
         }
         return;
     };
-
-    this.enableNotifyNextPlayerAction = function()
-    {
+    this.enableNotifyNextPlayerAction = function() {
         var num = 0;
-        for(var enemy in this.owner.nextEnemy) {
+        for (var enemy in this.owner.nextEnemy) {
             var obj = this.owner.nextEnemy[enemy];
-            if(obj.stateMachine.finiteStateEntity.state.isComplete) {
+            if (obj.stateMachine.finiteStateEntity.state.isComplete) {
                 num++;
             }
         }
-        if(num == this.owner.nextEnemy.length) {
+        if (num == this.owner.nextEnemy.length) {
             return true;
         }
         return false;

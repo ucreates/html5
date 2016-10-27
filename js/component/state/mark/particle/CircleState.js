@@ -12,30 +12,26 @@ Direction.Battle.Component.State.Mark.Particle.CircleState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         this.timeLine.setAddRate(0.75);
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         var frame = this.timeLine.currentFrame;
-        var radius = Html5.VFX.Easing.linerOut(420,frame,6);
-
-        for (var i=0;i<5;i++) {
+        var radius = Html5.VFX.Easing.linerOut(420, frame, 6);
+        for (var i = 0; i < 5; i++) {
             var diff = i * 0.75;
             //size
-            var rate = Html5.VFX.Scale.Decline.linerOut(5,frame-diff,6);
-            this.owner.sizes[i].transformMultiple(rate,rate);
-
+            var rate = Html5.VFX.Scale.Decline.linerOut(5, frame - diff, 6);
+            this.owner.sizes[i].transformMultiple(rate, rate);
             //position
             var mx = this.owner.scene.canvas.size.halfWidth;
             var my = this.owner.scene.canvas.size.halfHeight;
-
-            var entity = Html5.VFX.Circle.reverse(mx,my,radius,frame-diff);
+            var entity = Html5.VFX.Circle.reverse(mx, my, radius, frame - diff);
             entity = this.owner.currentFrameCenterPositionFromEntity(entity);
-            this.owner.positions[i].transform(entity.x+this.owner.sizes[i].paddingx, entity.y+this.owner.sizes[i].paddingy);
+            this.owner.positions[i].transform(entity.x + this.owner.sizes[i].paddingx, entity.y + this.owner.sizes[i].paddingy);
         }
         this.timeLine.goToNextFrame();
         return;

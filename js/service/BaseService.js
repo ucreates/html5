@@ -8,7 +8,6 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Direction.Battle.Service.BaseService = function() {
-
     this.createStrategy = function(strategyName) {
         return;
     };

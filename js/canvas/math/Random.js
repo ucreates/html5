@@ -8,11 +8,8 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.Mathmatics.Random = function() {};
-
-Html5.Mathmatics.Random.range = function(min,max)
-{
- var val = Math.random() * (max)+min;
- val = parseInt(val);
- return val;
+Html5.Mathmatics.Random.range = function(min, max) {
+    var val = Math.random() * (max) + min;
+    val = parseInt(val);
+    return val;
 };
-

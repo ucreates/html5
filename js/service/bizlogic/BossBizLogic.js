@@ -14,14 +14,12 @@ Direction.Battle.Service.BizLogic.BossBizLogic = function() {
     if (false !== dao.isEmpty()) {
         dao.save(new Direction.Battle.Service.Integration.Table.TBossAttackDataTable());
     }
-
     this.getCurrentAttackCount = function() {
         var dataBase = Direction.Battle.Service.Integration.DataBase.getInstance();
         var dao = dataBase.findServiceByName("TBossAttackDataTable");
         var table = dao.findById([1]);
         return table.attackCount;
     };
-
     this.updateCurrentAttackCount = function() {
         var dataBase = Direction.Battle.Service.Integration.DataBase.getInstance();
         var dao = dataBase.findServiceByName("TBossAttackDataTable");
@@ -30,7 +28,6 @@ Direction.Battle.Service.BizLogic.BossBizLogic = function() {
         dao.update(table);
         return;
     };
-
     this.clearCurrentAttackCount = function() {
         var dataBase = Direction.Battle.Service.Integration.DataBase.getInstance();
         var dao = dataBase.findServiceByName("TBossAttackDataTable");

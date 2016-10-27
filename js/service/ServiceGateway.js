@@ -9,19 +9,16 @@
 //======================================================================
 Direction.Battle.Service.ServiceGateway = function() {
     this.serviceList = new Array();
-
-    this.registService = function () {
-        this.serviceList["boss"] = new Direction.Battle.Service.BossService ();
+    this.registService = function() {
+        this.serviceList["boss"] = new Direction.Battle.Service.BossService();
     }
-
-    this.findServiceByName = function (serviceName) {
+    this.findServiceByName = function(serviceName) {
         if (null !== this.serviceList[serviceName]) {
             return this.serviceList[serviceName];
         }
         return null;
     };
-
-    this.findServiceByDomainSchema = function (domainSchema) {
+    this.findServiceByDomainSchema = function(domainSchema) {
         var schemaInfo = domainSchema.split("/");
         var serviceName = schemaInfo[0];
         var strategyName = schemaInfo[1];
@@ -31,16 +28,12 @@ Direction.Battle.Service.ServiceGateway = function() {
         }
         return null;
     };
-
     this.clear = function() {
         delete this.serviceList;
         this.serviceList = new Array();
     };
-
 };
-
 Direction.Battle.Service.ServiceGateway.instance = null;
-
 Direction.Battle.Service.ServiceGateway.getInstance = function() {
     if (null === Direction.Battle.Service.ServiceGateway.instance) {
         Direction.Battle.Service.ServiceGateway.instance = new Direction.Battle.Service.ServiceGateway();
@@ -48,4 +41,3 @@ Direction.Battle.Service.ServiceGateway.getInstance = function() {
     }
     return Direction.Battle.Service.ServiceGateway.instance;
 };
-

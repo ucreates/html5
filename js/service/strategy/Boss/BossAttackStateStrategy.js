@@ -8,7 +8,6 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Direction.Battle.Service.Strategy.BossAttackStateStrategy = function() {
-
     this.update = function(parameter) {
         var ret = new Array();
         var bizlogic = new Direction.Battle.Service.BizLogic.BossBizLogic();
@@ -23,5 +22,4 @@ Direction.Battle.Service.Strategy.BossAttackStateStrategy = function() {
         ret["is_success"] = true;
         return ret;
     };
-
 };

@@ -8,9 +8,6 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.System.Utility.Array = function() {};
-
-Html5.System.Utility.Array.isArray = function(value)
-{
- return value && value.constructor === [].constructor;
+Html5.System.Utility.Array.isArray = function(value) {
+    return value && value.constructor === [].constructor;
 };
-

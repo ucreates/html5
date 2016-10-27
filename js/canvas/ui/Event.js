@@ -8,18 +8,12 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.UI.Event = function() {};
-
-Html5.UI.Event.prevent = function()
-{
- event.preventDefault();
+Html5.UI.Event.prevent = function() {
+    event.preventDefault();
 };
-
-Html5.UI.Event.unlock = function()
-{
- document.removeEventListener("touchmove", Html5.UI.Event.prevent, false);
+Html5.UI.Event.unlock = function() {
+    document.removeEventListener("touchmove", Html5.UI.Event.prevent, false);
 };
-
-Html5.UI.Event.lock = function()
-{
- document.addEventListener("touchmove",Html5.UI.Event.prevent, false);    
+Html5.UI.Event.lock = function() {
+    document.addEventListener("touchmove", Html5.UI.Event.prevent, false);
 };

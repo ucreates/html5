@@ -8,10 +8,8 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.VFX.Scale.Loop = function() {};
-
-Html5.VFX.Scale.Loop.create = function(friction,currentFrame)
-{
- var rate = Html5.VFX.Sin.curveZeroToPlus(0.1,currentFrame)*friction;
- //value("loop::"+rate);
- return rate;
+Html5.VFX.Scale.Loop.create = function(friction, currentFrame) {
+    var rate = Html5.VFX.Sin.curveZeroToPlus(0.1, currentFrame) * friction;
+    //value("loop::"+rate);
+    return rate;
 };

@@ -8,6 +8,4 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.System.Strage = function() {};
-Html5.System.UserAgent.getName = function()
-{
-};
+Html5.System.UserAgent.getName = function() {};

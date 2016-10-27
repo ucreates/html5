@@ -9,8 +9,7 @@
 //======================================================================
 Direction.Battle.Service.Integration.Schema.Key = function() {
     this.keyList = new Array();
-
-    this.get = function () {
+    this.get = function() {
         var generateKey = null;
         var length = Object.keys(this.keyList).length - 1;
         var cidx = 0;
@@ -24,8 +23,7 @@ Direction.Battle.Service.Integration.Schema.Key = function() {
         }
         return generateKey;
     };
-
-    this.add = function (key,value) {
+    this.add = function(key, value) {
         if (null === this.keyList[key] || undefined === this.keyList[key]) {
             this.keyList[key] = value;
             return true;
@@ -33,7 +31,6 @@ Direction.Battle.Service.Integration.Schema.Key = function() {
         return false;
     };
 };
-
 Direction.Battle.Service.Integration.Schema.Key.generate = function(keyList) {
     var generateKey = null;
     var length = Object.keys(keyList).length - 1;

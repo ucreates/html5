@@ -10,11 +10,10 @@
 Direction.Battle.Service.Integration.Table.TBossAttackDataTable = function() {
     Direction.Battle.Service.Integration.Table.BaseTable.call(this);
     this.attackCount = 0;
-    this.getPrimaryKey = function () {
+    this.getPrimaryKey = function() {
         if (0 === this.primaryKey.keyList.length) {
-            this.primaryKey.add("id",this.id);
+            this.primaryKey.add("id", this.id);
         }
         return this.primaryKey.get();
     };
-
 };

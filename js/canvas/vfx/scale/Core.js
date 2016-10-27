@@ -8,7 +8,6 @@
 // We hope the tips and helpful in developing.
 //======================================================================
 Html5.VFX.Scale.Core = function() {};
-Html5.VFX.Scale.Core.padding = function(rate,size,position)
-{
-    return position-((size*rate-size)/2);
+Html5.VFX.Scale.Core.padding = function(rate, size, position) {
+    return position - ((size * rate - size) / 2);
 };

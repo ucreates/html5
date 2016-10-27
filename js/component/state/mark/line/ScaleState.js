@@ -12,16 +12,15 @@ Direction.Battle.Component.State.Mark.Line.ScaleState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         this.timeLine.setAddRate(0.1);
         return;
     };
-
-    this.execute = function () {
-        this.alpha = Html5.VFX.Fade.In.linerOut(this.timeLine.currentFrame,3);
-        var rate = Html5.VFX.Scale.Increase.linerOut(9,this.timeLine.currentFrame,5);
+    this.execute = function() {
+        this.alpha = Html5.VFX.Fade.In.linerOut(this.timeLine.currentFrame, 3);
+        var rate = Html5.VFX.Scale.Increase.linerOut(9, this.timeLine.currentFrame, 5);
         this.owner.size.transformMultiple(rate, rate);
         this.owner.position.transformDefault(this.owner.size.paddingx, this.owner.size.paddingy);
         this.timeLine.goToNextFrame();

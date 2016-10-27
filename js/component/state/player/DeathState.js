@@ -12,20 +12,17 @@ Direction.Battle.Component.State.Player.DeathState = function(owner) {
     this.owner = owner;
     this.isComplete = false;
     this.timeLine = new Html5.System.TimeLine.Manager();
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.timeLine.reset();
         return;
     };
-
-    this.execute = function () {
-        var x = Html5.VFX.Easing.quadraticOut(25,this.timeLine.currentFrame,5);
+    this.execute = function() {
+        var x = Html5.VFX.Easing.quadraticOut(25, this.timeLine.currentFrame, 5);
         this.owner.uposition.transformAdd(x, 0);
         this.owner.dposition.transformAdd(-x, 0);
-
         //alpha
-        this.alpha = Html5.VFX.Fade.Out.linerIn(this.timeLine.currentFrame,5);
-
-        if(this.alpha == 0) {
+        this.alpha = Html5.VFX.Fade.Out.linerIn(this.timeLine.currentFrame, 5);
+        if (this.alpha == 0) {
             this.restore();
             this.owner.uposition.restore();
             this.owner.dposition.restore();

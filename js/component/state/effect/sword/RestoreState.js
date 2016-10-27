@@ -12,16 +12,14 @@ Direction.Battle.Component.State.Effect.Sword.RestoreState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         this.timeLine.reset();
         this.owner.restore();
         this.owner.timeLine.start = false;
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         return;
     };
 };

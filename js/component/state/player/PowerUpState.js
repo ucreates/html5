@@ -15,32 +15,28 @@ Direction.Battle.Component.State.Player.PowerUpState = function(owner) {
     var firstFrame = 4;
     var secondFrame = 20;
     var lastFrame = 20;
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.timeLine.reset();
         return;
     };
-
-    this.execute = function () {
-        if(this.timeLine.isLess(firstFrame)) {
+    this.execute = function() {
+        if (this.timeLine.isLess(firstFrame)) {
             //position
-            var y = Html5.VFX.Easing.linerIn(50,this.timeLine.currentFrame,firstFrame);
-            this.owner.position.transformDefault(0,-y);
-
+            var y = Html5.VFX.Easing.linerIn(50, this.timeLine.currentFrame, firstFrame);
+            this.owner.position.transformDefault(0, -y);
             //effect
             var entity = this.owner.currentFrameCenterPosition();
-            this.owner.effectPowerUp.restoreEntities(entity.x,entity.y);
+            this.owner.effectPowerUp.restoreEntities(entity.x, entity.y);
         }
-
-        if(this.timeLine.isRange(firstFrame,secondFrame)) {
+        if (this.timeLine.isRange(firstFrame, secondFrame)) {
             this.owner.effectPowerUp.timeLine.start = true;
             this.owner.effectPowerUpRay.timeLine.start = true;
         }
-
-        if(this.timeLine.isOver(secondFrame) && !this.owner.effectPowerUp.timeLine.start) {
+        if (this.timeLine.isOver(secondFrame) && !this.owner.effectPowerUp.timeLine.start) {
             this.owner.restore();
             this.owner.stateMachine.stop();
             if (!this.owner.isLastPlayer) {
-                Html5.System.Notify.NotifyManager.getInstance().notify("nextPlayerAction",this.owner.id + 1);
+                Html5.System.Notify.NotifyManager.getInstance().notify("nextPlayerAction", this.owner.id + 1);
             } else {
                 Html5.System.Notify.NotifyManager.getInstance().notify("nextEnemyAction");
             }

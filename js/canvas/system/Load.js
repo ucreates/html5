@@ -7,11 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Html5.System.Load = function(filename)
-{
- var script = document.createElement('script');
- script.src = '/js/canvas/'+filename;
- script.type = 'text/javascript';
- script.defer = true;
- document.getElementsByTagName('head').item(0).appendChild(script);
+Html5.System.Load = function(filename) {
+    var script = document.createElement('script');
+    script.src = '/js/canvas/' + filename;
+    script.type = 'text/javascript';
+    script.defer = true;
+    document.getElementsByTagName('head').item(0).appendChild(script);
 };

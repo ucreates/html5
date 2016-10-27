@@ -7,12 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-Html5.Entity.User = function(id,name)
-{
- this.id = id;
- this.name = name;
- this.dump = function()
- {
- };
+Html5.Entity.User = function(id, name) {
+    this.id = id;
+    this.name = name;
+    this.dump = function() {};
 };
-

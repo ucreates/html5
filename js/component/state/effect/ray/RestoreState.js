@@ -12,13 +12,11 @@ Direction.Battle.Component.State.Effect.Ray.RestoreState = function(owner) {
     this.owner = owner;
     this.timeLine = new Html5.System.TimeLine.Manager();
     this.isComplete = false;
-
-    this.create = function (paramter) {
+    this.create = function(paramter) {
         this.isComplete = false;
         for (var stateMachine in this.owner.stateMachineList) {
             this.owner.stateMachineList[stateMachine].stop();
         }
-
         this.owner.timeLine.reset();
         this.owner.restore();
         this.owner.alpha = 0;
@@ -26,8 +24,7 @@ Direction.Battle.Component.State.Effect.Ray.RestoreState = function(owner) {
         this.owner.timeLine.start = false;
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         return;
     };
 };

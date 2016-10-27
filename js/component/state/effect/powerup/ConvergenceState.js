@@ -14,7 +14,7 @@ Direction.Battle.Component.State.Effect.PowerUp.ConvergenceState = function(owne
     this.isComplete = false;
     this.lastFrame = 0;
     this.index = 0;
-    this.create = function (parameter) {
+    this.create = function(parameter) {
         this.isComplete = false;
         this.timeLine.reset();
         this.timeLine.setAddRate(1);
@@ -22,18 +22,15 @@ Direction.Battle.Component.State.Effect.PowerUp.ConvergenceState = function(owne
         this.index = parameter["index"];
         return;
     };
-
-    this.execute = function () {
+    this.execute = function() {
         //var currentFrame = this.createFrameDifferent(prevFrame);
         var currentFrame = this.timeLine.currentFrame;
-        var x = Html5.VFX.Vector.linerOut(this.owner.vectors[this.index].magnitude,currentFrame,1,this.owner.vectors[this.index].cos);
-        var y = Html5.VFX.Vector.linerOut(this.owner.vectors[this.index].magnitude,currentFrame,1,this.owner.vectors[this.index].sin);
-        this.owner.positions[this.index].transformAdd(x,y);
-
-        var width = Html5.VFX.Scale.Decline.linerIn(this.owner.sizes[this.index].dwidth,currentFrame,1);
-        var height = Html5.VFX.Scale.Decline.linerIn(this.owner.sizes[this.index].dheight,currentFrame,1);
-        this.owner.sizes[this.index].transform(width,height);
-
+        var x = Html5.VFX.Vector.linerOut(this.owner.vectors[this.index].magnitude, currentFrame, 1, this.owner.vectors[this.index].cos);
+        var y = Html5.VFX.Vector.linerOut(this.owner.vectors[this.index].magnitude, currentFrame, 1, this.owner.vectors[this.index].sin);
+        this.owner.positions[this.index].transformAdd(x, y);
+        var width = Html5.VFX.Scale.Decline.linerIn(this.owner.sizes[this.index].dwidth, currentFrame, 1);
+        var height = Html5.VFX.Scale.Decline.linerIn(this.owner.sizes[this.index].dheight, currentFrame, 1);
+        this.owner.sizes[this.index].transform(width, height);
         if (currentFrame < this.lastFrame) {
             this.timeLine.goToNextFrame();
         }
